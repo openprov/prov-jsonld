@@ -48,6 +48,15 @@
 	    }
 	},
 
+	"Entity": {
+	    "@id": "prov:Entity",
+	    "@context" : {
+		"value": {
+		    "@id": "prov:value"
+		}
+	    }
+	},
+
 	"Delegation": {
 	    "@id": "prov:Delegation",
 	    "@context": {
