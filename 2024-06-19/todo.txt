@@ -1,0 +1,18 @@
+
+
+- check provext ns
+- finalise url for prov-jsonld context
+- check usage of prov:
+  	only in schema, not in context.json
+
+
+- using playgroudn, check if  prefix prov is required here    "type" : [ "prov:Person" ]
+
+
+-in     function selectElement2,
+  strip the last , if it exists
+
+
+
+
+

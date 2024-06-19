@@ -1,0 +1,21 @@
+{
+  "@graph" : [
+    {
+      "@type" : "Agent",
+      "@id" : "ex:derek",
+      "type" : [ "prov:Person" ],
+      "foaf:mbox" : [ {
+          "@value" : "<mailto:derek@example.org>"
+      } ],
+      "foaf:givenName" : [ {
+          "@value" : "Derek"
+      } ]
+    },  
+    {
+      "@type" : "Derivation",
+      "generatedEntity" : "ex:dataSet2",
+      "usedEntity" : "ex:dataSet1",
+      "type" : [ "prov:Revision" ]
+    }
+  ]
+}
