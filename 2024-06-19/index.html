@@ -8,13 +8,15 @@
       var respecConfig = {
           specStatus: "Member-SUBM",
 	  submissionCommentNumber: "01",
-          edDraftURI: "https://openprovenance.org/prov-jsonld/",
+          edDraftURI: "https://www.w3.org/submissions/2024/SUBM-prov-jsonld-20240619/",
           editors: [{
               name: "Luc Moreau",
+	      company: "King's College London",
               url: "https://nms.kcl.ac.uk/luc.moreau/",
           },{
               name: "Dong Huynh",
-              url: "http://trungdong.github.io",
+	      company: "King's College London",
+              url: "http://trungdong.github.io/",
           }],
           shortName: "prov-jsonld",
           github: "openprov/prov-jsonld",
@@ -22,7 +24,7 @@
 	  localBiblio: {
 	      "PROV-JSON": {
 		  title: "The PROV-JSON Serialization. A JSON Representation for the PROV Data Model",
-		  href: "http://www.w3.org/Submission/prov-json/",
+		  href: "https://www.w3.org/submissions/prov-json/",
 		  status: "W3C Member Submission 24 April 2013",
 		  publisher: "W3C",
 	      },
@@ -43,7 +45,7 @@
 	  }
       };
     </script>
-     <style type="text/css">
+     <style>
        .frame {
 	   border-style: solid;
 	   border-width: 1pt;
@@ -51,8 +53,8 @@
        
      </style>
       
-<style type="text/css">
-.note { font-size:small; margin-left:50px }
+<style>
+  .note { font-size:small; margin-left:50px }
 
 .diamond {
     font-weight: normal;
@@ -92,11 +94,14 @@ table.thinborder td {
     </section>
 
 
-    <section>
-      <h2 id='sotd'>Status of this Document</h2>
-      <p>This is a member submission from King's College London</p>
-      <p id="w3c-state">W3C Member submission, 19 June 2024</p>
+    <section  id='sotd'>
+      <h2>Status of this Document</h2>
+<!--      <p><em>This section describes the status of this document at the time of its publication. A list of current W3C publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/">W3C technical reports index</a> at https://www.w3.org/TR/.</em></p>-->
+
+      <p id="w3c-state"><a href="https://www.w3.org/standards/types#SUBM">W3C Member submission</a>, 19 June 2024</p>
     </section>
+
+    <nav id="toc"><h2>Table of Contents</h2></nav>
     
     <section id='conformance'>
       <p>
@@ -313,7 +318,7 @@ table.thinborder td {
 	
       <section id="type-entity">
 	<h3>prov:Entity</h3>
-	<p>In the <a>Schema for prov:Entity</a>, an entity MUST contain an identifier (property <span class="hljs-attr">@id</span>) and a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Entity</span>. It MAY contain further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>),  a location (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. (The presence of a colon ":" in the <span class="hljs-attr">patternProperties</span> element forces all other properties to have the structure of a prefix, a colon, and a local name.) </p>
+	<p>In the <a>Schema for prov:Entity</a>, an entity MUST contain an identifier (property <span class="hljs-attr">@id</span>) and a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Entity</span>. It MAY contain further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>),  a location (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix (see see <a href="https://www.w3.org/TR/prov-dm/#entity.attributes">PROV-DM entity attributes</a>). (The presence of a colon ":" in the <span class="hljs-attr">patternProperties</span> element forces all other properties to have the structure of a prefix, a colon, and a local name.) </p>
 	<dfn data-dfn-type="dfn" id="dfn-entity-schema">Schema for prov:Entity</dfn>
 	<div  class="frame">
 	  <pre data-include="schema-2024-06-19.json" data-oninclude="selectEntity"></pre>
@@ -324,7 +329,7 @@ table.thinborder td {
 
       <section id="type-activity">
 	<h3>prov:Activity</h3>
-	<p>In the <a>Schema for prov:Activity</a>, an activity MUST contain an identifier (property <span class="hljs-attr">@id</span>) and a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Activity</span>. It MAY contain a start time (property <span class="hljs-attr">startTime</span>),  an end time (property <span class="hljs-attr">endTime</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a location  (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. </p>
+	<p>In the <a>Schema for prov:Activity</a>, an activity MUST contain an identifier (property <span class="hljs-attr">@id</span>) and a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Activity</span>. It MAY contain a start time (property <span class="hljs-attr">startTime</span>, see <a href="https://www.w3.org/TR/prov-dm/#activity.startTime">PROV-DM startTime</a>),  an end time (property <span class="hljs-attr">endTime</span>, see <a href="https://www.w3.org/TR/prov-dm/#activity.endTime">PROV-DM endTime</a>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a location  (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix (see see <a href="https://www.w3.org/TR/prov-dm/#activity.attributes">PROV-DM activity attributes</a>). </p>
 	<dfn data-dfn-type="dfn" id="dfn-activity-schema">Schema for prov:Activity</dfn>
 	<div  class="frame">
 	  <pre class="json" data-include="schema-2024-06-19.json" data-oninclude="selectActivity"></pre>
@@ -333,7 +338,7 @@ table.thinborder td {
 
       <section id="type-agent">
 	<h3>prov:Agent</h3>
-	<p>In the <a>Schema for prov:Agent</a>, an agent MUST contain an identifier (property <span class="hljs-attr">@id</span>) and a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Agent</span>. It MAY contain further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a location  (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. </p>
+	<p>In the <a>Schema for prov:Agent</a>, an agent MUST contain an identifier (property <span class="hljs-attr">@id</span>) and a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Agent</span>. It MAY contain further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a location  (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix (see see <a href="https://www.w3.org/TR/prov-dm/#agent.attributes">PROV-DM agent attributes</a>). </p>
 	<dfn data-dfn-type="dfn" id="dfn-agent-schema">Schema for prov:Agent</dfn>
 	<div  class="frame">
 	  <pre class="json" data-include="schema-2024-06-19.json" data-oninclude="selectAgent"></pre>
@@ -344,7 +349,7 @@ table.thinborder td {
 	<h3>prov:Derivation</h3>
 	<p>In the <a>Schema for prov:Derivation</a>, a derivation MUST contain a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Derivation</span>.
 	  It SHOULD contain a generated entity (property <span class="hljs-attr">generatedEntity</span>) and used entity (property <span class="hljs-attr">usedEntity</span>).
-	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), an activity (property <span class="hljs-attr">activity</span>),  a generation (property <span class="hljs-attr">generation</span>),  a usage (property <span class="hljs-attr">usage</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>), or other properties with an explicit prefix. </p>
+	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), an activity (property <span class="hljs-attr">activity</span>),  a generation (property <span class="hljs-attr">generation</span>),  a usage (property <span class="hljs-attr">usage</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>), or other properties with an explicit prefix (see see <a href="https://www.w3.org/TR/prov-dm/#derivation.attributes">PROV-DM derivation attributes</a>). </p>
 	<dfn data-dfn-type="dfn" id="dfn-derivation-schema">Schema for prov:Derivation</dfn>
 	<div  class="frame">
 	  <pre class="json" data-include="schema-2024-06-19.json" data-oninclude="selectDerivation"></pre>
@@ -356,7 +361,7 @@ table.thinborder td {
 	<h3>prov:Attribution</h3>
 	<p>In the <a>Schema for prov:Attribution</a>, <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-attribution">attribution</a> MUST contain a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Attribution</span>.
 	  It SHOULD contain the <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/#attribution.entity">entity</a> that is the subject of the attribution (property <span class="hljs-attr">entity</span>) and the associated <a href="https://www.w3.org/TR/2013/REC-prov-dm-20130430/#attribution.agent">agent</a> (property <span class="hljs-attr">agent</span>).
-	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties witn an explicit prefix. </p>
+	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties witn an explicit prefix (see see <a href="https://www.w3.org/TR/prov-dm/#attribution.attributes">PROV-DM attribution attributes</a>). </p>
 	<dfn data-dfn-type="dfn" id="dfn-attribution-schema">Schema for prov:Attribution</dfn>
 	<div  class="frame">
 	  <pre class="json" data-include="schema-2024-06-19.json" data-oninclude="selectAttribution"></pre>
@@ -364,55 +369,55 @@ table.thinborder td {
       </section>
 
       
-      <section>
+      <section id="type-association">
 	<h3>prov:Association</h3>
 	<p>In the <a>Schema for prov:Association</a>, an association MUST contain a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Association</span>.
 	  It SHOULD contain an activity (property <span class="hljs-attr">activity</span>) and its associated agent (property <span class="hljs-attr">agent</span>).
-	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), a plan (property <span class="hljs-attr">plan</span>),  a location (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>),  a role (property <span class="hljs-attr">role</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-role">PROV-DM prov:role</a>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. </p>
+	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), a plan (property <span class="hljs-attr">plan</span>),  a location (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>),  a role (property <span class="hljs-attr">role</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-role">PROV-DM prov:role</a>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix (see see <a href="https://www.w3.org/TR/prov-dm/#association.attributes">PROV-DM association attributes</a>). </p>
 	<dfn data-dfn-type="dfn" id="dfn-association-schema">Schema for prov:Association</dfn>
 	<div  class="frame">
 	  <pre class="json" data-include="schema-2024-06-19.json" data-oninclude="selectAssociation"></pre>
 	</div>
       </section>
 
-      <section>
+      <section id="type-delegation">
 	<h3>prov:Delegation</h3>
 	<p>In the <a>Schema for prov:Delegation</a>, a delegation MUST contain a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Delegation</span>.
 	  It SHOULD contain a delegate agent (property <span class="hljs-attr">delegate</span>) and a responsible agent (property <span class="hljs-attr">responsible</span>).
-	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), an activity (property <span class="hljs-attr">activity</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. </p>
+	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), an activity (property <span class="hljs-attr">activity</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix (see see <a href="https://www.w3.org/TR/prov-dm/#delegation.attributes">PROV-DM delegation attributes</a>). </p>
 	<dfn data-dfn-type="dfn" id="dfn-delegation-schema">Schema for prov:Delegation</dfn>
 	<div  class="frame">
 	  <pre class="json" data-include="schema-2024-06-19.json" data-oninclude="selectDelegation"></pre>
 	</div>
       </section>
 
-      <section>
+      <section id="type-usage">
 	<h3>prov:Usage</h3>
 	<p>In the <a>Schema for prov:Usage</a>, a usage MUST contain a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Usage</span>.
 	  It SHOULD contain an activity (property <span class="hljs-attr">activity</span>) and an entity (property <span class="hljs-attr">entity</span>).
-	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), a time (property <span class="hljs-attr">time</span>),  a location (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>),  a role (property <span class="hljs-attr">role</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-role">PROV-DM prov:role</a>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. </p>
+	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), a time (property <span class="hljs-attr">time</span>),  a location (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>),  a role (property <span class="hljs-attr">role</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-role">PROV-DM prov:role</a>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix (see see <a href="https://www.w3.org/TR/prov-dm/#usage.attributes">PROV-DM usage attributes</a>). </p>
 	<dfn data-dfn-type="dfn" id="dfn-usage-schema">Schema for prov:Usage</dfn>
 	<div  class="frame">
 	  <pre class="json" data-include="schema-2024-06-19.json" data-oninclude="selectUsage"></pre>
 	</div>
       </section>
       
-      <section>
+      <section id="type-generation">
 	<h3>prov:Generation</h3>
 	<p>In the <a>Schema for prov:Generation</a>, a generation MUST contain a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Generation</span>.
 	  It SHOULD contain an entity (property <span class="hljs-attr">entity</span>) and an activity (property <span class="hljs-attr">activity</span>).
-	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), a time (property <span class="hljs-attr">time</span>),  a location (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>),  a role (property <span class="hljs-attr">role</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-role">PROV-DM prov:role</a>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. </p>
+	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), a time (property <span class="hljs-attr">time</span>),  a location (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>),  a role (property <span class="hljs-attr">role</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-role">PROV-DM prov:role</a>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix (see see <a href="https://www.w3.org/TR/prov-dm/#generation.attributes">PROV-DM generation attributes</a>). </p>
 	<dfn data-dfn-type="dfn" id="dfn-generation-schema">Schema for prov:Generation</dfn>
 	<div  class="frame">
 	  <pre class="json" data-include="schema-2024-06-19.json" data-oninclude="selectGeneration"></pre>
 	</div>
       </section>
       
-      <section>
+      <section id="type-invalidation">
 	<h3>prov:Invalidation</h3>
 	<p>In the <a>Schema for prov:Invalidation</a>, an invalidation MUST contain a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Invalidation</span>.
 	  It SHOULD contain an entity (property <span class="hljs-attr">entity</span>) and an activity (property <span class="hljs-attr">activity</span>).
-	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), a time (property <span class="hljs-attr">time</span>),  a location (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>),  a role (property <span class="hljs-attr">role</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-role">PROV-DM prov:role</a>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. </p>
+	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), a time (property <span class="hljs-attr">time</span>),  a location (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>),  a role (property <span class="hljs-attr">role</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-role">PROV-DM prov:role</a>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix (see see <a href="https://www.w3.org/TR/prov-dm/#invalidation.attributes">PROV-DM invalidation attributes</a>). </p>
 	<dfn data-dfn-type="dfn" id="dfn-invalidation-schema">Schema for prov:Invalidation</dfn>
 	<div  class="frame">
 	  <pre class="json" data-include="schema-2024-06-19.json" data-oninclude="selectInvalidation"></pre>
@@ -420,22 +425,22 @@ table.thinborder td {
       </section>
 
 
-      <section>
+      <section id="type-start">
 	<h3>prov:Start</h3>
  	<p>In the <a>Schema for prov:Start</a>, a start MUST contain a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Start</span>.
 	  It SHOULD contain an activity that was started (property <span class="hljs-attr">activity</span>); it MAY contain a starter activity (property <span class="hljs-attr">starter</span>) and a triggering entity (property <span class="hljs-attr">trigger</span>).
-	  It MAY also contain an identifier (property <span class="hljs-attr">@id</span>), a time (property <span class="hljs-attr">time</span>),  a location (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>),  a role (property <span class="hljs-attr">role</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-role">PROV-DM prov:role</a>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. </p>
+	  It MAY also contain an identifier (property <span class="hljs-attr">@id</span>), a time (property <span class="hljs-attr">time</span>),  a location (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>),  a role (property <span class="hljs-attr">role</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-role">PROV-DM prov:role</a>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix (see see <a href="https://www.w3.org/TR/prov-dm/#start.attributes">PROV-DM start attributes</a>). </p>
 	<dfn data-dfn-type="dfn" id="dfn-start-schema">Schema for prov:Start</dfn>
 	<div  class="frame">
 	  <pre class="json" data-include="schema-2024-06-19.json" data-oninclude="selectStart"></pre>
 	</div>
       </section>
 
-      <section>
+      <section id="type-end">
 	<h3>prov:End</h3>
  	<p>In the <a>Schema for prov:End</a>, an end MUST contain a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">End</span>.
 	  It SHOULD contain an activity that was ended (property <span class="hljs-attr">activity</span>); it MAY contain an ender activity (property <span class="hljs-attr">ender</span>) and a triggering entity (property <span class="hljs-attr">trigger</span>).
-	  It MAY also contain an identifier (property <span class="hljs-attr">@id</span>), a time (property <span class="hljs-attr">time</span>),  a location (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>),  a role (property <span class="hljs-attr">role</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-role">PROV-DM prov:role</a>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. </p>
+	  It MAY also contain an identifier (property <span class="hljs-attr">@id</span>), a time (property <span class="hljs-attr">time</span>),  a location (property <span class="hljs-attr">location</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-location">PROV-DM prov:location</a>),  a role (property <span class="hljs-attr">role</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-role">PROV-DM prov:role</a>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix (see see <a href="https://www.w3.org/TR/prov-dm/#end.attributes">PROV-DM end attributes</a>). </p>
 	<dfn data-dfn-type="dfn" id="dfn-end-schema">Schema for prov:End</dfn>
 	<div  class="frame">
 	  <pre class="json" data-include="schema-2024-06-19.json" data-oninclude="selectEnd"></pre>
@@ -443,11 +448,11 @@ table.thinborder td {
       </section>
 
 
-      <section>
+      <section id="type-communication">
 	<h3>prov:Communication</h3>
 	<p>In the <a>Schema for prov:Communication</a>, a communication MUST contain a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Communication</span>.
 	  It SHOULD contain an informed activity (property <span class="hljs-attr">informed</span>) and an informant activity (property <span class="hljs-attr">informant</span>).
-	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. </p>
+	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix (see see <a href="https://www.w3.org/TR/prov-dm/#communication.attributes">PROV-DM communication attributes</a>). </p>
 
 	<dfn data-dfn-type="dfn" id="dfn-communication-schema">Schema for prov:Communication</dfn>
 	<div  class="frame">
@@ -455,11 +460,11 @@ table.thinborder td {
 	</div>
       </section>
 
-      <section>
+      <section id="type-influence">
 	<h3>prov:Influence</h3>
 	<p>In the <a>Schema for prov:Influence</a>, an influence MUST contain a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Influence</span>.
 	  It SHOULD contain an influencee (property <span class="hljs-attr">influencee</span>) and an influencer (property <span class="hljs-attr">influencer</span>).
-	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. </p>
+	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix (see see <a href="https://www.w3.org/TR/prov-dm/#influence.attributes">PROV-DM influence attributes</a>). </p>
 
 	<dfn data-dfn-type="dfn" id="dfn-influence-schema">Schema for prov:Influence</dfn>
 	<div  class="frame">
@@ -467,11 +472,11 @@ table.thinborder td {
 	</div>
       </section>
 
-      <section>
+      <section id="type-specialization">
 	<h3>prov:Specialization</h3>
 	<p>In the <a>Schema for prov:Specialization</a>, a specialization MUST contain a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Specialization</span>.
 	  It SHOULD contain a specific entity (property <span class="hljs-attr">specificEntity</span>) and a general entity (property <span class="hljs-attr">generalEntity</span>).
-	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. </p>
+	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. (There is no equivalent for those properties in PROV-DM, see section <a href="#interoperability">Interoperability</a>.) </p>
 
 	<dfn data-dfn-type="dfn" id="dfn-specialization-schema">Schema for prov:Specialization</dfn>
 	<div  class="frame">
@@ -479,22 +484,22 @@ table.thinborder td {
 	</div>
       </section>
 
-      <section>
+      <section id="type-alternate">
 	<h3>prov:Alternate</h3>
 	<p>In the <a>Schema for prov:Alternate</a>, an alternate MUST contain a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Alternate</span>.
 	  It SHOULD contain a first alternate (property <span class="hljs-attr">alternate1</span>) and a second alternate (property <span class="hljs-attr">alternate2</span>).
-	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. </p>
+	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. (There is no equivalent for those properties in PROV-DM, see section <a href="#interoperability">Interoperability</a>.) </p>
 	<dfn data-dfn-type="dfn" id="dfn-alternate-schema">Schema for prov:Alternate</dfn>
 	<div  class="frame">
 	  <pre class="json" data-include="schema-2024-06-19.json" data-oninclude="selectAlternate"></pre>
 	</div>
       </section>
 
-      <section>
+      <section id="type-membership">
 	<h3>prov:Membership</h3>
 	<p>In the <a>Schema for prov:Membership</a>, a membership MUST contain a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Membership</span>.
 	  It SHOULD contain a collection (property <span class="hljs-attr">collection</span>) and a single entity or an array of them (property <span class="hljs-attr">entity</span>).
-	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. </p>
+	  It MAY contain an identifier (property <span class="hljs-attr">@id</span>), further type information (property <span class="hljs-attr">type</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-type">PROV-DM prov:type</a>), a label (property <span class="hljs-attr">label</span>, see <a href="https://www.w3.org/TR/prov-dm/#term-attribute-label">PROV-DM prov:label</a>), or other properties with an explicit prefix. (There is no equivalent for those properties in PROV-DM, see section <a href="#interoperability">Interoperability</a>.) </p>
 	<dfn data-dfn-type="dfn" id="dfn-membership-schema">Schema for prov:Membership</dfn>
 	<div  class="frame">
 	  <pre class="json" data-include="schema-2024-06-19.json" data-oninclude="selectMembership"></pre>
@@ -502,7 +507,7 @@ table.thinborder td {
 	</div>
       </section>
 
-      <section>
+      <section id="type-bundle-document">
 	<h3>prov:Bundle and prov:Document</h3>
 
 	<p>In the <a>Schemas for prov:Bundle and prov:Document</a>, a bundle and a document MUST contain a property <span class="hljs-attr">@type</span> with value <span class="hljs-string">Bundle</span> and <span class="hljs-string">Document</span> respectively, a context <span class="hljs-attr">@context</span>, and set of PROV expressions <span class="hljs-attr">@graph</span>.  The names of the properties <span class="hljs-attr">@context</span> and <span class="hljs-attr">@graph</span> are specified by JSON-LD [[!JSON-LD11]]. In addition, a bundle must contain an identifier (property <span class="hljs-attr">@id</span>). </p>
@@ -946,7 +951,7 @@ table.thinborder td {
 	return "{\n	" + result + ": false\n	}\n}";
     }
     function selectElement2(element,utils, content, url ) {
-	var regex=new RegExp("\"" + element + "\"([\\s\\S]*?)" + "},", 'g')
+	var regex=new RegExp("\"" + element + "\"([\\s\\S]*?)" + "}", 'g')
 
 	console.log("regexp " + regex);
 	var result = content.match(regex); 
@@ -958,6 +963,14 @@ table.thinborder td {
 	console.log("regexp " + regex);
 	var result = content.match(regex); 
 	return  "{\n	" + result + "\n}";
+    }
+
+    function selectElement5(element,utils, content, url ) {
+	var regex=new RegExp("\"" + element + "\"([\\s\\S]*?)" + "\"additionalProperties\": { \"type\": \"string\" }", 'g')
+
+	console.log("regexp " + regex);
+	var result = content.match(regex); 
+	return "{\n	" + result + "\n                                        } ]  } \n	}\n}";
     }
 
     function selectEntity(utils, content, url ) {
@@ -1019,7 +1032,7 @@ table.thinborder td {
 	return selectElement3("QualifiedName\\+",utils,content,url);
     }
     function selectArrayOfValues(utils, content, url ) {
-	return selectElement("ArrayOfValues",utils,content,url);
+	return selectElement5("ArrayOfValues",utils,content,url);
     }
     function selectTypedValue(utils, content, url ) {
 	return selectElement("typed_value",utils,content,url);
