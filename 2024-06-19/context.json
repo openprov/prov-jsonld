@@ -258,7 +258,7 @@
 		    "@type" : "@id"
 		},
 		"generalEntity": {
-		    "@id": "provext:entity",
+		    "@id": "provext:generalEntity",
 		    "@type": "@id"
 		}
 	    }
@@ -273,7 +273,7 @@
 		    "@type" : "@id"
 		},
 		"entity": {
-		    "@id": "provext:entity",
+		    "@id": "provext:collection",
 		    "@type": "@id"
 		}
 	    }
@@ -287,7 +287,7 @@
 		    "@type" : "@id"
 		},
 		"alternate2": {
-		    "@id": "provext:entity",
+		    "@id": "provext:alternate",
 		    "@type": "@id"
 		}
 	    }
