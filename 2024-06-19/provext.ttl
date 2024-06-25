@@ -54,5 +54,24 @@ owl:topObjectProperty rdf:type owl:ObjectProperty ,
 
 :Specialization rdf:type owl:Class .
 
+#################################################################
+#    Property chains
+#################################################################
+
+prov:specializationOf
+    owl:propertyChainAxiom (:qualifiedSpecialization
+        :generalEntity
+    ) .
+
+prov:alternateOf
+    owl:propertyChainAxiom (:qualifiedAlternate
+        :alternate
+    ) .
+
+prov:hadMember
+    owl:propertyChainAxiom (:qualifiedMembership
+        :collection
+    ) .
+
 
 
