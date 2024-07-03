@@ -299,7 +299,6 @@
 				"plan" :      { "$ref": "#/definitions/QualifiedName"},
 				"type":       { "$ref": "#/definitions/ArrayOfValues"},
 				"role":       { "$ref": "#/definitions/ArrayOfValues" },
-				"location":   { "$ref": "#/definitions/ArrayOfValues" },
 				"label":      { "$ref": "#/definitions/ArrayOfLabelValues"}
 			},
 			"patternProperties": {
