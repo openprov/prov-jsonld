@@ -1,0 +1,77 @@
+@prefix : <https://openprovenance.org/provjsonld/ns/provext#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://openprovenance.org/provjsonld/ns/provext#> .
+
+<https://openprovenance.org/provjsonld/ns/provext#> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdf:type owl:ObjectProperty ,
+                               owl:TransitiveProperty .
+
+
+:qualifiedMembership rdf:type owl:ObjectProperty ;
+                    rdfs:domain prov:Entity ;
+                    rdfs:range :Membership .
+
+
+:qualifiedSpecialization rdf:type owl:ObjectProperty ;
+                    rdfs:domain prov:Entity ;
+                    rdfs:range :Specialization .
+
+:qualifiedAlternate rdf:type owl:ObjectProperty ;
+                    rdfs:domain prov:Entity ;
+                    rdfs:range :Alternate .
+
+
+:collection rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Membership ;
+                    rdfs:range :Entity .
+
+:generalEntity rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Specialization ;
+                    rdfs:range :Entity .
+:alternate rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Alternate ;
+                    rdfs:range :Entity .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+:Membership rdf:type owl:Class .
+
+:Alternate rdf:type owl:Class .
+
+:Specialization rdf:type owl:Class .
+
+#################################################################
+#    Property chains
+#################################################################
+
+prov:specializationOf
+    owl:propertyChainAxiom (:qualifiedSpecialization
+        :generalEntity
+    ) .
+
+prov:alternateOf
+    owl:propertyChainAxiom (:qualifiedAlternate
+        :alternate
+    ) .
+
+prov:hadMember
+    owl:propertyChainAxiom (:qualifiedMembership
+        :collection
+    ) .
+
+
+
