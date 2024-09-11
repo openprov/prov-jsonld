@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en" dir="ltr"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 35.1.1">
+<meta name="generator" content="ReSpec 35.1.2">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 span.example-title{text-transform:none}
@@ -178,7 +178,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   ],
   "shortName": "prov-jsonld",
   "github": "openprov/prov-jsonld",
-  "publishDate": "2024-07-04",
+  "publishDate": "2024-08-25",
   "canonicalURI": "edDraft",
   "copyrightStart": "2016",
   "subtitle": "A JSON-LD Representation for the PROV Data Model",
@@ -207,8 +207,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "id": "json-schema"
     }
   },
-  "publishISODate": "2024-07-04T00:00:00.000Z",
-  "generatedSubtitle": "W3C Member Submission 04 July 2024"
+  "publishISODate": "2024-08-25T00:00:00.000Z",
+  "generatedSubtitle": "W3C Member Submission 25 August 2024"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-Member-SUBM"></head>
   <body class="h-entry"><div class="head">
@@ -216,12 +216,12 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   </a><a class="logo"><img crossorigin="" alt="W3C Member Submission" height="48" src="https://www.w3.org/Icons/member_subm-v.svg" width="211">
   </a></p>
     <h1 id="title" class="title">The PROV-JSONLD Serialization</h1> <h2 id="subtitle" class="subtitle">A JSON-LD Representation for the PROV Data Model</h2>
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#Member-SUBM">W3C Member Submission</a> <time class="dt-published" datetime="2024-07-04">04 July 2024</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#Member-SUBM">W3C Member Submission</a> <time class="dt-published" datetime="2024-08-25">25 August 2024</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
         <dt>This version:</dt><dd>
-                <a class="u-url" href="https://www.w3.org/Submission/2024/SUBM-prov-jsonld-20240704/">https://www.w3.org/Submission/2024/SUBM-prov-jsonld-20240704/</a>
+                <a class="u-url" href="https://www.w3.org/Submission/2024/SUBM-prov-jsonld-20240825/">https://www.w3.org/Submission/2024/SUBM-prov-jsonld-20240825/</a>
               </dd>
         <dt>Latest published version:</dt><dd>
                 <a href="https://www.w3.org/Submission/prov-jsonld/">https://www.w3.org/Submission/prov-jsonld/</a>
@@ -290,7 +290,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
     <p>
     By publishing this document, <abbr title="World Wide Web Consortium">W3C</abbr> acknowledges that the
-    <a href="https://www.w3.org/Submission/2024/SUBM-prov-jsonld-20240704/">Submitting Members</a> have made a formal
+    <a href="https://www.w3.org/Submission/2024/SUBM-prov-jsonld-20240825/">Submitting Members</a> have made a formal
     Submission request to <abbr title="World Wide Web Consortium">W3C</abbr> for discussion. Publication of this document by
     <abbr title="World Wide Web Consortium">W3C</abbr> indicates no endorsement of its content by <abbr title="World Wide Web Consortium">W3C</abbr>, nor that <abbr title="World Wide Web Consortium">W3C</abbr> has, is, or
     will be allocating any resources to the issues addressed by it. This
@@ -304,7 +304,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       <abbr title="World Wide Web Consortium">W3C</abbr> Membership</a>. Please consult the requirements associated with Member Submissions of
     <a href="https://www.w3.org/policies/patent-policy/#sec-submissions">section 3.3 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>. Please consult the complete
     <a href="https://www.w3.org/Submission">list of acknowledged <abbr title="World Wide Web Consortium">W3C</abbr> Member Submissions</a>.
-  </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#Introduction"><bdi class="secno">2. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#namespace"><bdi class="secno">2.1 </bdi>Namespace</a></li></ol></li><li class="tocline"><a class="tocxref" href="#Example"><bdi class="secno">3. </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#schema"><bdi class="secno">4. </bdi>Schema</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#preliminary-definitions"><bdi class="secno">4.1 </bdi>Preliminary Definitions</a></li><li class="tocline"><a class="tocxref" href="#type-entity"><bdi class="secno">4.2 </bdi>prov:Entity</a></li><li class="tocline"><a class="tocxref" href="#type-activity"><bdi class="secno">4.3 </bdi>prov:Activity</a></li><li class="tocline"><a class="tocxref" href="#type-agent"><bdi class="secno">4.4 </bdi>prov:Agent</a></li><li class="tocline"><a class="tocxref" href="#type-derivation"><bdi class="secno">4.5 </bdi>prov:Derivation</a></li><li class="tocline"><a class="tocxref" href="#type-attribution"><bdi class="secno">4.6 </bdi>prov:Attribution</a></li><li class="tocline"><a class="tocxref" href="#type-association"><bdi class="secno">4.7 </bdi>prov:Association</a></li><li class="tocline"><a class="tocxref" href="#type-delegation"><bdi class="secno">4.8 </bdi>prov:Delegation</a></li><li class="tocline"><a class="tocxref" href="#type-usage"><bdi class="secno">4.9 </bdi>prov:Usage</a></li><li class="tocline"><a class="tocxref" href="#type-generation"><bdi class="secno">4.10 </bdi>prov:Generation</a></li><li class="tocline"><a class="tocxref" href="#type-invalidation"><bdi class="secno">4.11 </bdi>prov:Invalidation</a></li><li class="tocline"><a class="tocxref" href="#type-start"><bdi class="secno">4.12 </bdi>prov:Start</a></li><li class="tocline"><a class="tocxref" href="#type-end"><bdi class="secno">4.13 </bdi>prov:End</a></li><li class="tocline"><a class="tocxref" href="#type-communication"><bdi class="secno">4.14 </bdi>prov:Communication</a></li><li class="tocline"><a class="tocxref" href="#type-influence"><bdi class="secno">4.15 </bdi>prov:Influence</a></li><li class="tocline"><a class="tocxref" href="#type-specialization"><bdi class="secno">4.16 </bdi>prov:Specialization</a></li><li class="tocline"><a class="tocxref" href="#type-alternate"><bdi class="secno">4.17 </bdi>prov:Alternate</a></li><li class="tocline"><a class="tocxref" href="#type-membership"><bdi class="secno">4.18 </bdi>prov:Membership</a></li><li class="tocline"><a class="tocxref" href="#type-bundle-document"><bdi class="secno">4.19 </bdi>prov:Bundle and prov:Document</a></li></ol></li><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">5. </bdi>JSON-LD Context</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction-qualification-pattern"><bdi class="secno">5.1 </bdi>Introduction: Qualification Pattern</a></li><li class="tocline"><a class="tocxref" href="#context-generic-elements"><bdi class="secno">5.2 </bdi>Default and generic Context Elements</a></li><li class="tocline"><a class="tocxref" href="#context-entity"><bdi class="secno">5.3 </bdi>Entity</a></li><li class="tocline"><a class="tocxref" href="#context-activity"><bdi class="secno">5.4 </bdi>Activity</a></li><li class="tocline"><a class="tocxref" href="#context-agent"><bdi class="secno">5.5 </bdi>Agent</a></li><li class="tocline"><a class="tocxref" href="#context-derivation"><bdi class="secno">5.6 </bdi>Derivation</a></li><li class="tocline"><a class="tocxref" href="#context-attribution"><bdi class="secno">5.7 </bdi>Attribution</a></li><li class="tocline"><a class="tocxref" href="#context-association"><bdi class="secno">5.8 </bdi>Association</a></li><li class="tocline"><a class="tocxref" href="#context-delegation"><bdi class="secno">5.9 </bdi>Delegation</a></li><li class="tocline"><a class="tocxref" href="#context-usage"><bdi class="secno">5.10 </bdi>Usage</a></li><li class="tocline"><a class="tocxref" href="#context-generation"><bdi class="secno">5.11 </bdi>Generation</a></li><li class="tocline"><a class="tocxref" href="#context-invalidation"><bdi class="secno">5.12 </bdi>Invalidation</a></li><li class="tocline"><a class="tocxref" href="#context-start"><bdi class="secno">5.13 </bdi>Start</a></li><li class="tocline"><a class="tocxref" href="#context-end"><bdi class="secno">5.14 </bdi>End</a></li><li class="tocline"><a class="tocxref" href="#context-communication"><bdi class="secno">5.15 </bdi>Communication</a></li><li class="tocline"><a class="tocxref" href="#context-influence"><bdi class="secno">5.16 </bdi>Influence</a></li><li class="tocline"><a class="tocxref" href="#context-specialization"><bdi class="secno">5.17 </bdi>Specialization</a></li><li class="tocline"><a class="tocxref" href="#context-alternate"><bdi class="secno">5.18 </bdi>Alternate</a></li><li class="tocline"><a class="tocxref" href="#context-membership"><bdi class="secno">5.19 </bdi>Membership</a></li></ol></li><li class="tocline"><a class="tocxref" href="#interoperability"><bdi class="secno">6. </bdi>Interoperability Considerations</a></li><li class="tocline"><a class="tocxref" href="#schema-appendix"><bdi class="secno">A. </bdi>JSON Schema for PROV-JSONLD</a></li><li class="tocline"><a class="tocxref" href="#context-appendix"><bdi class="secno">B. </bdi>JSON-LD Context</a></li><li class="tocline"><a class="tocxref" href="#provext-appendix"><bdi class="secno">C. </bdi>PROVEXT Ontology</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">D. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">D.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">D.2 </bdi>Informative references</a></li></ol></li></ol></nav>
+  </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#Introduction"><bdi class="secno">2. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#namespace"><bdi class="secno">2.1 </bdi>Namespace</a></li></ol></li><li class="tocline"><a class="tocxref" href="#Example"><bdi class="secno">3. </bdi>Example</a></li><li class="tocline"><a class="tocxref" href="#schema"><bdi class="secno">4. </bdi>Schema</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#preliminary-definitions"><bdi class="secno">4.1 </bdi>Preliminary Definitions</a></li><li class="tocline"><a class="tocxref" href="#type-entity"><bdi class="secno">4.2 </bdi>prov:Entity</a></li><li class="tocline"><a class="tocxref" href="#type-activity"><bdi class="secno">4.3 </bdi>prov:Activity</a></li><li class="tocline"><a class="tocxref" href="#type-agent"><bdi class="secno">4.4 </bdi>prov:Agent</a></li><li class="tocline"><a class="tocxref" href="#type-derivation"><bdi class="secno">4.5 </bdi>prov:Derivation</a></li><li class="tocline"><a class="tocxref" href="#type-attribution"><bdi class="secno">4.6 </bdi>prov:Attribution</a></li><li class="tocline"><a class="tocxref" href="#type-association"><bdi class="secno">4.7 </bdi>prov:Association</a></li><li class="tocline"><a class="tocxref" href="#type-delegation"><bdi class="secno">4.8 </bdi>prov:Delegation</a></li><li class="tocline"><a class="tocxref" href="#type-usage"><bdi class="secno">4.9 </bdi>prov:Usage</a></li><li class="tocline"><a class="tocxref" href="#type-generation"><bdi class="secno">4.10 </bdi>prov:Generation</a></li><li class="tocline"><a class="tocxref" href="#type-invalidation"><bdi class="secno">4.11 </bdi>prov:Invalidation</a></li><li class="tocline"><a class="tocxref" href="#type-start"><bdi class="secno">4.12 </bdi>prov:Start</a></li><li class="tocline"><a class="tocxref" href="#type-end"><bdi class="secno">4.13 </bdi>prov:End</a></li><li class="tocline"><a class="tocxref" href="#type-communication"><bdi class="secno">4.14 </bdi>prov:Communication</a></li><li class="tocline"><a class="tocxref" href="#type-influence"><bdi class="secno">4.15 </bdi>prov:Influence</a></li><li class="tocline"><a class="tocxref" href="#type-specialization"><bdi class="secno">4.16 </bdi>prov:Specialization</a></li><li class="tocline"><a class="tocxref" href="#type-alternate"><bdi class="secno">4.17 </bdi>prov:Alternate</a></li><li class="tocline"><a class="tocxref" href="#type-membership"><bdi class="secno">4.18 </bdi>prov:Membership</a></li><li class="tocline"><a class="tocxref" href="#type-bundle-document"><bdi class="secno">4.19 </bdi>prov:Bundle and prov:Document</a></li><li class="tocline"><a class="tocxref" href="#type-context"><bdi class="secno">4.20 </bdi>Context</a></li></ol></li><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">5. </bdi>JSON-LD Context</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction-qualification-pattern"><bdi class="secno">5.1 </bdi>Introduction: Qualification Pattern</a></li><li class="tocline"><a class="tocxref" href="#context-generic-elements"><bdi class="secno">5.2 </bdi>Default and generic Context Elements</a></li><li class="tocline"><a class="tocxref" href="#context-entity"><bdi class="secno">5.3 </bdi>Entity</a></li><li class="tocline"><a class="tocxref" href="#context-activity"><bdi class="secno">5.4 </bdi>Activity</a></li><li class="tocline"><a class="tocxref" href="#context-agent"><bdi class="secno">5.5 </bdi>Agent</a></li><li class="tocline"><a class="tocxref" href="#context-derivation"><bdi class="secno">5.6 </bdi>Derivation</a></li><li class="tocline"><a class="tocxref" href="#context-attribution"><bdi class="secno">5.7 </bdi>Attribution</a></li><li class="tocline"><a class="tocxref" href="#context-association"><bdi class="secno">5.8 </bdi>Association</a></li><li class="tocline"><a class="tocxref" href="#context-delegation"><bdi class="secno">5.9 </bdi>Delegation</a></li><li class="tocline"><a class="tocxref" href="#context-usage"><bdi class="secno">5.10 </bdi>Usage</a></li><li class="tocline"><a class="tocxref" href="#context-generation"><bdi class="secno">5.11 </bdi>Generation</a></li><li class="tocline"><a class="tocxref" href="#context-invalidation"><bdi class="secno">5.12 </bdi>Invalidation</a></li><li class="tocline"><a class="tocxref" href="#context-start"><bdi class="secno">5.13 </bdi>Start</a></li><li class="tocline"><a class="tocxref" href="#context-end"><bdi class="secno">5.14 </bdi>End</a></li><li class="tocline"><a class="tocxref" href="#context-communication"><bdi class="secno">5.15 </bdi>Communication</a></li><li class="tocline"><a class="tocxref" href="#context-influence"><bdi class="secno">5.16 </bdi>Influence</a></li><li class="tocline"><a class="tocxref" href="#context-specialization"><bdi class="secno">5.17 </bdi>Specialization</a></li><li class="tocline"><a class="tocxref" href="#context-alternate"><bdi class="secno">5.18 </bdi>Alternate</a></li><li class="tocline"><a class="tocxref" href="#context-membership"><bdi class="secno">5.19 </bdi>Membership</a></li></ol></li><li class="tocline"><a class="tocxref" href="#interoperability"><bdi class="secno">6. </bdi>Interoperability Considerations</a></li><li class="tocline"><a class="tocxref" href="#schema-appendix"><bdi class="secno">A. </bdi>JSON Schema for PROV-JSONLD</a></li><li class="tocline"><a class="tocxref" href="#context-appendix"><bdi class="secno">B. </bdi>JSON-LD Context for PROV-JSONLD</a></li><li class="tocline"><a class="tocxref" href="#provext-appendix"><bdi class="secno">C. </bdi>PROVEXT: PROV Ontology Extension for PROV-JSONLD</a></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">D. </bdi>Acknowledgements</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">E. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">E.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">E.2 </bdi>Informative references</a></li></ol></li></ol></nav>
 
 
 
@@ -478,7 +478,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       <p>The PROV-JSONLD representation of this example can be seen in Example 1. At the top level, a PROV-JSONLD document is a JSON object with two properties
 	<span class="hljs-attr">@context</span>
 	and
-	<span class="hljs-attr">@graph</span>, as per JSON-LD.  A context contains mappings of prefixes to namespaces, and also an explicit reference to <a href="https://openprovenance.org/prov-jsonld/context-2024-06-19.json">https://openprovenance.org/prov-jsonld/context.json</a> — the JSON-LD 1.1 context defining the semantic mapping for PROV-JSONLD. (This context is fully described in section 5.)
+	<span class="hljs-attr">@graph</span>, as per JSON-LD.  A context contains mappings of prefixes to namespaces, and also an explicit reference to <a href="https://openprovenance.org/prov-jsonld/context-2024-08-25.jsonld">https://openprovenance.org/prov-jsonld/context.json</a> — the JSON-LD 1.1 context defining the semantic mapping for PROV-JSONLD. (This context is fully described in section 5.)
       The <span class="hljs-attr">@graph</span> property has an array of PROV expressions as value. Each PROV expression is itself a JSON object with at least a <span class="hljs-attr">@type</span> property (for instance, <span class="hljs-string">Entity</span>, <span class="hljs-string">Agent</span> or <span class="hljs-string">Derivation</span>). Each of these PROV expressions provides a description of a resource. Some of these resources have an identity provided by the <span class="hljs-attr">@id</span> property (for instance, <span class="hljs-string">ex:article1</span> or <span class="hljs-string">ex:derek</span>). Other resources are anonymous and, therefore, do not have a property <span class="hljs-attr">@id</span>, for instance, the <span class="hljs-string">Derivation</span> between the dataset and the article. </p><p>
 
       </p><p>PROV expressions can be enriched with various properties. Some properties are predefined by PROV-JSONLD such as <span class="hljs-attr">activity</span> and <span class="hljs-attr">agent</span> in a <span class="hljs-string">Association</span>. Further PROV attributes are allowed, for instance <span class="hljs-attr">type</span> with an array of further types, to better describe the resource. Others  may be defined in a different namespace such as <span class="hljs-attr">foaf:givenName</span>, for which we expect the prefix <span class="hljs-attr">foaf</span> to be declared in the <span class="hljs-attr">@context</span> property. </p>
@@ -518,7 +518,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       <span class="hljs-attr">"@value"</span> : <span class="hljs-string">"Derek"</span>
     } ],
     <span class="hljs-attr">"foaf:mbox"</span> : [ {
-      <span class="hljs-attr">"@value"</span> : <span class="hljs-string">""</span>
+      <span class="hljs-attr">"@value"</span> : <span class="hljs-string">"&lt;mailto:derek@example.org&gt;"</span>
     } ]
   }, {
     <span class="hljs-attr">"@type"</span> : <span class="hljs-string">"Association"</span>,
@@ -536,8 +536,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <span class="hljs-attr">"entity"</span> : <span class="hljs-string">"ex:article1"</span>,
     <span class="hljs-attr">"activity"</span> : <span class="hljs-string">"ex:compose"</span>
   } ]
-}
-</code></pre>
+}</code></pre>
       </div>
       <p></p>
     </section>
@@ -547,7 +546,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
       <p>This section provides an overview of the JSON schema [<cite><a class="bibref" data-link-type="biblio" href="#bib-json-schema" title="JSON Schema: A Media Type for Describing JSON Documents">JSON-SCHEMA</a></cite>] for PROV-JSONLD; its full details are in <a href="#schema-appendix">Appendix A</a>.</p>
 
-      <p>For each object property identified in the JSON scheme, we provide the corresponding normative attribute definition in [<cite><a class="bibref" data-link-type="biblio" href="#bib-prov-dm" title="PROV-DM: The PROV Data Model">PROV-DM</a></cite>].</p>
+      <p>For each object property identified in the JSON schema, we provide the corresponding normative attribute definition in [<cite><a class="bibref" data-link-type="biblio" href="#bib-prov-dm" title="PROV-DM: The PROV Data Model">PROV-DM</a></cite>].</p>
 
       <section id="preliminary-definitions"><div class="header-wrapper"><h3 id="x4-1-preliminary-definitions"><bdi class="secno">4.1 </bdi>Preliminary Definitions</h3><a class="self-link" href="#preliminary-definitions" aria-label="Permalink for Section 4.1"></a></div>
 	
@@ -576,7 +575,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 	<div class="note" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="3"><span>Editor's note</span></div><div class="">The <a href="https://www.w3.org/TR/prov-n/#prod-QUALIFIED_NAME">production rules for qualified names</a> are more complex than the simple regular expression outlined here. A post-processor will need to check that qualified names comply with the definition in [<cite><a class="bibref" data-link-type="biblio" href="#bib-prov-n" title="PROV-N: The Provenance Notation">PROV-N</a></cite>].</div></div>
 
-      <p>Typed values (<span class="hljs-attr">typed_value</span>) are JSON objects with properties <span class="hljs-attr">@value</span> and <span class="hljs-attr">@type</span>. String values are JSON objects with properties <span class="hljs-attr">@value</span> and <span class="hljs-attr">@language</span>.</p>
+      <p>Typed values (<span class="hljs-attr">typed_value</span>) are JSON objects with properties <span class="hljs-attr">@value</span> and <span class="hljs-attr">@type</span>. String values (<span class="hljs-attr">lang_string</span>) are JSON objects with properties <span class="hljs-attr">@value</span> and <span class="hljs-attr">@language</span>.</p>
 
 	<div class="frame">
 	  <pre data-oninclude="selectTypedValue" aria-busy="false"><code class="hljs json">{
@@ -623,30 +622,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/QualifiedName"</span> },
 					{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/typed_value"</span> },
 					{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/lang_string"</span> }
-				]
-			}
-		},
-		<span class="hljs-attr">"ArrayOfLabelValues"</span>: {
+                                ]
+                         }
+	 }
+}</code></pre>
+	  <pre data-oninclude="selectArrayOfLabelValues" aria-busy="false"><code class="hljs json">{
+	<span class="hljs-attr">"ArrayOfLabelValues"</span>: {
 			<span class="hljs-attr">"$id"</span>: <span class="hljs-string">"#/definitions/ArrayOfLabelValues"</span>,
 			<span class="hljs-attr">"type"</span>: <span class="hljs-string">"array"</span>,
 			<span class="hljs-attr">"items"</span>: { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/lang_string"</span> }
-		},
-		<span class="hljs-attr">"Context"</span>: {
-			<span class="hljs-attr">"$id"</span>: <span class="hljs-string">"#/definitions/Context"</span>,
-			<span class="hljs-attr">"type"</span>: <span class="hljs-string">"array"</span>,
-			<span class="hljs-attr">"title"</span>: <span class="hljs-string">"The @context Schema"</span>,
-			<span class="hljs-attr">"items"</span>: {
-				<span class="hljs-attr">"oneOf"</span>: [
-					{
-						<span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-						<span class="hljs-attr">"format"</span>: <span class="hljs-string">"uri"</span>
-
-					},
-					{
-						<span class="hljs-attr">"type"</span>: <span class="hljs-string">"object"</span>,
-						<span class="hljs-attr">"title"</span>: <span class="hljs-string">"The Items Schema"</span>,
-						<span class="hljs-attr">"additionalProperties"</span>: { <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span> }
-                                        } ]  } 
 	}
 }</code></pre>
 	</div>
@@ -1233,10 +1217,11 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 }</code></pre>
 	</div>
 
-	<p>Bundles contain statements (definition <span class="hljs-attr">prov:Statement</span>), whereas documents contain statements or bundles (definition <span class="hljs-attr">prov:StatementOrBundle</span>).
+	<p>Bundles contain statements (definition <span class="hljs-attr">prov:Statement</span>), whereas documents contain statements or bundles (definition <span class="hljs-attr">prov:StatementOrBundle</span>); see their specification in <a href="#dfn-context-schema" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-context-schema-1">Schemas for prov:Statement and prov:StatementOrBundle</a>.</p>
 	
 
-      	</p><div class="frame">
+	<dfn data-dfn-type="dfn" id="dfn-context-schema" tabindex="0" aria-haspopup="dialog">Schemas for prov:Statement and prov:StatementOrBundle</dfn>	  
+      	<div class="frame">
 	  <pre data-oninclude="selectStatement" aria-busy="false"><code class="hljs json">{
 	<span class="hljs-attr">"prov:Statement"</span>: {
 			<span class="hljs-attr">"oneOf"</span>: [
@@ -1256,10 +1241,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 				{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/prov:Specialization"</span> },
 				{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/prov:Membership"</span> },
 				{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/prov:Influence"</span> },
-				{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/prov:Communication"</span> },
-				{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/prov:QualifiedAlternate"</span> },
-				{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/prov:QualifiedSpecialization"</span> },
-				{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/prov:QualifiedMembership"</span> }
+				{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/prov:Communication"</span> }
 			]
 	}
 }</code></pre>
@@ -1272,9 +1254,17 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 	}
 }</code></pre>
 	</div>
+	
+	<p>The type <span class="hljs-string">Context</span> is described in the next section.
+      </p></section>
+
+      <section id="type-context"><div class="header-wrapper"><h3 id="x4-20-context"><bdi class="secno">4.20 </bdi>Context</h3><a class="self-link" href="#type-context" aria-label="Permalink for Section 4.20"></a></div>
+	
 
 
-	<p>Finally, contexts are defined as follows. They take the shape of an array, containing either mappings of prefixes to URIs or URIs to further JSON-LD contexts.</p>
+
+	<p>Finally, contexts are defined according to <a href="#dfn-context-schema" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-context-schema-2">Schema for Context</a>. They take the shape of an array, containing either mappings of prefixes to IRIs or IRIs to further JSON-LD contexts.</p>
+	<dfn data-dfn-type="dfn" id="dfn-context-schema" tabindex="0" aria-haspopup="dialog">Schema for Context</dfn>
       	<div class="frame">
 	  <pre data-oninclude="selectContext" aria-busy="false"><code class="hljs json">{
 	<span class="hljs-attr">"Context"</span>: {
@@ -1292,11 +1282,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 						<span class="hljs-attr">"type"</span>: <span class="hljs-string">"object"</span>,
 						<span class="hljs-attr">"title"</span>: <span class="hljs-string">"The Items Schema"</span>,
 						<span class="hljs-attr">"additionalProperties"</span>: { <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span> }
-					}
-				]
+                                        }
+                                ]
+	                }
 	}
 }</code></pre>
 	</div>
+	
+	
 </section>
 
 
@@ -1337,18 +1330,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 	  respectively map to PROV-O object properties
 	  <span class="hljs-string">prov:entity</span>,
 	  <span class="hljs-string">prov:activity</span> and
-	  <span class="hljs-string">prov:agent</span>.</p>
-
-	  <p>The following JSON properties have the same meaning in all contexts of a PROV-JSONLD document:
-	  <span class="hljs-attr">role</span>,
-	  <span class="hljs-attr">type</span>,
-	  <span class="hljs-attr">label</span> and
-	  <span class="hljs-attr">location</span>	  
-	  respectively map to the RDF properties
-	  <span class="hljs-string">prov:hadRole</span>,
-	  <span class="hljs-string">rdf:type</span>,
-	  <span class="hljs-string">rdfs:label</span>, and
-	  <span class="hljs-string">prov:atLocation</span>.
+	  <span class="hljs-string">prov:agent</span>.
 	</p>
 
 	<div class="frame">
@@ -1363,6 +1345,38 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 	},
 	<span class="hljs-attr">"agent"</span>: {
 	    <span class="hljs-attr">"@id"</span>: <span class="hljs-string">"prov:agent"</span>,
+	    <span class="hljs-attr">"@type"</span>: <span class="hljs-string">"@id"</span>
+	}
+}</code></pre>
+	</div>
+
+	<p>The following JSON properties have the same meaning in all contexts of a PROV-JSONLD document:
+	  <span class="hljs-attr">role</span>,
+	  <span class="hljs-attr">type</span>,
+	  <span class="hljs-attr">label</span> and
+	  <span class="hljs-attr">location</span>	  
+	  respectively map to the RDF properties
+	  <span class="hljs-string">prov:hadRole</span>,
+	  <span class="hljs-string">rdf:type</span>,
+	  <span class="hljs-string">rdfs:label</span>, and
+	  <span class="hljs-string">prov:atLocation</span>.
+	</p>
+
+	<div class="frame">
+	  <pre data-oninclude="selectContextIntro2" aria-busy="false"><code class="hljs json">{
+	<span class="hljs-attr">"role"</span>: {
+	    <span class="hljs-attr">"@id"</span>: <span class="hljs-string">"prov:hadRole"</span>,
+	    <span class="hljs-attr">"@type"</span>: <span class="hljs-string">"@id"</span>
+	},
+	<span class="hljs-attr">"type"</span>: {
+	    <span class="hljs-attr">"@id"</span>: <span class="hljs-string">"rdf:type"</span>,
+	    <span class="hljs-attr">"@type"</span>: <span class="hljs-string">"@id"</span>
+	},
+	<span class="hljs-attr">"label"</span>: {
+	    <span class="hljs-attr">"@id"</span>: <span class="hljs-string">"rdfs:label"</span>
+	},
+	<span class="hljs-attr">"location"</span>: {
+	    <span class="hljs-attr">"@id"</span>: <span class="hljs-string">"prov:atLocation"</span>,
 	    <span class="hljs-attr">"@type"</span>: <span class="hljs-string">"@id"</span>
 	}
 }</code></pre>
@@ -1392,7 +1406,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       
       <section id="context-activity"><div class="header-wrapper"><h3 id="x5-4-activity"><bdi class="secno">5.4 </bdi>Activity</h3><a class="self-link" href="#context-activity" aria-label="Permalink for Section 5.4"></a></div>
 	
-	<p>In the mapping <a href="#dfn-activity-context" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-activity-context-1">Context for Activity</a>, the JSON properties <span class="hljs-attr">startTime</span> and <span class="hljs-attr">endTime</span> map to the RDF data properties <span class="hljs-string">prov:startedAtTime</span> and <span class="hljs-string">prov:endedAtType</span>, respectively, and have a range of type <span class="hljs-string">xsd:dateTime</span>.</p>
+	<p>In the mapping <a href="#dfn-activity-context" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-activity-context-1">Context for Activity</a>, the JSON properties <span class="hljs-attr">startTime</span> and <span class="hljs-attr">endTime</span> map to the RDF data properties <span class="hljs-string">prov:startedAtTime</span> and <span class="hljs-string">prov:endedAtType</span>, respectively, and have a value coerced to datatype <span class="hljs-string">xsd:dateTime</span>.</p>
 	
 	<dfn data-dfn-type="dfn" id="dfn-activity-context" tabindex="0" aria-haspopup="dialog">Context for Activity</dfn>      
 	<div class="frame">
@@ -1575,7 +1589,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 	  <span class="hljs-attr">time</span>
 	  map to the object property
 	  <span class="hljs-string">prov:qualifiedUsage</span> and the data property
-	  <span class="hljs-string">prov:atTime</span>, respectively. The range of the latter is
+	  <span class="hljs-string">prov:atTime</span>, respectively. The value of the latter is coerced to datatype
 	  <span class="hljs-string">xsd:dateTime</span>. 
 	</p>
 	<dfn data-dfn-type="dfn" id="dfn-usage-context" tabindex="0" aria-haspopup="dialog">Context for Usage</dfn>      
@@ -1607,7 +1621,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 	  <span class="hljs-attr">time</span>
 	  map to the object property
 	  <span class="hljs-string">prov:qualifiedGeneration</span> and the data property
-	  <span class="hljs-string">prov:atTime</span>, respectively. The range of the latter is <span class="hljs-string">xsd:dateTime</span>.
+	  <span class="hljs-string">prov:atTime</span>, respectively. The value of the latter is coerced to datatype <span class="hljs-string">xsd:dateTime</span>.
 	</p>
 	<dfn data-dfn-type="dfn" id="dfn-generation-context" tabindex="0" aria-haspopup="dialog">Context for Generation</dfn>      
 	<div class="frame">
@@ -1638,7 +1652,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 	  <span class="hljs-attr">time</span>
 	  map to the object property
 	  <span class="hljs-string">prov:qualifiedInvalidation</span> and the data property
-	  <span class="hljs-string">prov:atTime</span>, respectively. The range of the latter is <span class="hljs-string">xsd:dateTime</span>.
+	  <span class="hljs-string">prov:atTime</span>, respectively. The value of the latter is coerced to datatype <span class="hljs-string">xsd:dateTime</span>.
 	</p>
 	<dfn data-dfn-type="dfn" id="dfn-invalidation-context" tabindex="0" aria-haspopup="dialog">Context for Invalidation</dfn>      
 	<div class="frame">
@@ -1674,7 +1688,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 	  <span class="hljs-string">prov:qualifiedStart</span>,
 	  <span class="hljs-string">prov:entity</span>, 
 	  <span class="hljs-string">prov:hadActivity</span>, and the data property
-	  <span class="hljs-string">prov:atTime</span>, respectively. The range of the latter is
+	  <span class="hljs-string">prov:atTime</span>, respectively. The value of the latter is coerced to datatype
 	  <span class="hljs-string">xsd:dateTime</span>. 
 	</p>
 	<dfn data-dfn-type="dfn" id="dfn-start-context" tabindex="0" aria-haspopup="dialog">Context for Start</dfn>      
@@ -1718,7 +1732,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 	  <span class="hljs-string">prov:qualifiedEnd</span>,
 	  <span class="hljs-string">prov:entity</span>, 
 	  <span class="hljs-string">prov:hadActivity</span>, and the data property
-	  <span class="hljs-string">prov:atTime</span>, respectively. The range of the latter is
+	  <span class="hljs-string">prov:atTime</span>, respectively. The value of the latter is coerced to datatype
 	  <span class="hljs-string">xsd:dateTime</span>. 
 	</p>
 	<dfn data-dfn-type="dfn" id="dfn-end-context" tabindex="0" aria-haspopup="dialog">Context for End</dfn>      
@@ -1921,7 +1935,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
     <dl>
       <dt id="IC1">IC1:</dt>
-      <dd>There are differences between PROV-DM and PROV-O in terms of the level of requirements set on some expressions. For instance, PROV-DM mandates the presence of an <a href="https://www.w3.org/TR/prov-dm/#generation.entity">entity</a> in a generation, whereas it defines an <a href="https://www.w3.org/TR/prov-dm/#generation.activity">activity</a> as optional.  Compliance requirements are not the same in PROV-O as one could define a <a href="https://www.w3.org/TR/prov-o/#Generation">qualified generation</a> with an <a href="https://www.w3.org/TR/prov-o/#p_activity">activity</a> but without an <a href="https://www.w3.org/TR/prov-o/#qualifiedGeneration">entity</a>.  Experience shows that there may be good reasons why a generation may not refer to an entity; for instance, because the recorded provenance is not "complete" yet, and further provenance expressions still need to be asserted, received or merged; in the meantime, we still want to be able to process such provenance, despite being "incomplete". Thus, in PROV-JSONLD, the presence of an entity and an activity in a generation expression is <em class="rfc2119">RECOMMENDED</em> (we use the term <em class="rfc2119">SHOULD</em>), while other properties are optional (we use the term <em class="rfc2119">MAY</em>), and its <span class="hljs-attr">@type</span> is <em class="rfc2119">REQUIRED</em> (we use the term <em class="rfc2119">MUST</em>).</dd>
+      <dd>There are differences between PROV-DM and PROV-O in terms of the level of requirements set on some expressions. For instance, PROV-DM mandates the presence of an <a href="https://www.w3.org/TR/prov-dm/#generation.entity">entity</a> in a generation, whereas it defines an <a href="https://www.w3.org/TR/prov-dm/#generation.activity">activity</a> as optional.  Compliance requirements are not the same in PROV-O as one could define a <a href="https://www.w3.org/TR/prov-o/#Generation">qualified generation</a> with an <a href="https://www.w3.org/TR/prov-o/#p_activity">activity</a> but without an <a href="https://www.w3.org/TR/prov-o/#qualifiedGeneration">entity</a>.  Experience shows that there may be good reasons why a generation may not refer to an entity; for instance, because the recorded provenance is not "complete" yet, and further provenance expressions still need to be asserted, received or merged; in the meantime, we still want to be able to process such provenance, even if "incomplete". Thus, in PROV-JSONLD, the presence of an entity and an activity in a generation expression is <em class="rfc2119">RECOMMENDED</em> (we use the term <em class="rfc2119">SHOULD</em>), while other properties are optional (we use the term <em class="rfc2119">MAY</em>), and its <span class="hljs-attr">@type</span> is <em class="rfc2119">REQUIRED</em> (we use the term <em class="rfc2119">MUST</em>).</dd>
 
       <dt id="IC2">IC2:</dt>      
       <dd>In PROV-DM, all relations are n-ary except for specialization, alternate and membership, which are binary, meaning that no identifier or extra properties are allowed for these. In PROV-O,  this design decision translates to the lack of qualified relations for specialization, alternate and  membership. In PROV-JSONLD, in order to keep the regular structure of JSON objects and  the natural encoding of relations, but also to ensure the simplicity and efficiency of parsers, these three relations are encoded using the same pattern as for other relations. Therefore, their mapping to RDF via the JSON-LD context relies on a PROV extension namespace (denoted by the prefix <span class="hljs-attr">provext</span>) in which classes for Specialization, Alternate and Membership are defined.  The PROV-JSONLD serialization also allows for identifier and properties to be encoded for these relations. </dd>
@@ -1942,7 +1956,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       <span class="hljs-attr">"@id"</span> : <span class="hljs-string">"ex:derek"</span>,
       <span class="hljs-attr">"type"</span> : [ <span class="hljs-string">"prov:Person"</span> ],
       <span class="hljs-attr">"foaf:mbox"</span> : [ {
-          <span class="hljs-attr">"@value"</span> : <span class="hljs-string">""</span>
+          <span class="hljs-attr">"@value"</span> : <span class="hljs-string">"&lt;mailto:derek@example.org&gt;"</span>
       } ],
       <span class="hljs-attr">"foaf:givenName"</span> : [ {
           <span class="hljs-attr">"@value"</span> : <span class="hljs-string">"Derek"</span>
@@ -1955,8 +1969,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       <span class="hljs-attr">"type"</span> : [ <span class="hljs-string">"prov:Revision"</span> ]
     }
   ]
-}
-</code></pre>
+}</code></pre>
 	</div>
 	</dd>
       
@@ -2094,10 +2107,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 				{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/prov:Specialization"</span> },
 				{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/prov:Membership"</span> },
 				{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/prov:Influence"</span> },
-				{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/prov:Communication"</span> },
-				{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/prov:QualifiedAlternate"</span> },
-				{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/prov:QualifiedSpecialization"</span> },
-				{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/prov:QualifiedMembership"</span> }
+				{ <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/prov:Communication"</span> }
 			]
 		},
 		<span class="hljs-attr">"prov:Entity"</span>: {
@@ -2381,60 +2391,6 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 			},
 			<span class="hljs-attr">"additionalProperties"</span>: <span class="hljs-literal">false</span>
 		},
-		<span class="hljs-attr">"prov:QualifiedAlternate"</span>: {
-			<span class="hljs-attr">"type"</span>: <span class="hljs-string">"object"</span>,
-			<span class="hljs-attr">"required"</span>: [
-				<span class="hljs-string">"@type"</span>
-			],
-			<span class="hljs-attr">"properties"</span>: {
-				<span class="hljs-attr">"@type"</span>:      { <span class="hljs-attr">"pattern"</span>: <span class="hljs-string">"provext:QualifiedAlternate"</span> },
-				<span class="hljs-attr">"@id"</span>:        { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/QualifiedName"</span> },
-				<span class="hljs-attr">"alternate1"</span>: { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/QualifiedName"</span> },
-				<span class="hljs-attr">"alternate2"</span>: { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/QualifiedName"</span> },
-				<span class="hljs-attr">"type"</span>:       { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/ArrayOfValues"</span>},
-				<span class="hljs-attr">"label"</span>:      { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/ArrayOfLabelValues"</span>}
-			},
-			<span class="hljs-attr">"patternProperties"</span>: {
-				<span class="hljs-attr">"^[A-Za-z0-9_]+:(.*)$"</span>: { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/ArrayOfValues"</span> }
-			},
-			<span class="hljs-attr">"additionalProperties"</span>: <span class="hljs-literal">false</span>
-		},
-		<span class="hljs-attr">"prov:QualifiedSpecialization"</span>: {
-			<span class="hljs-attr">"type"</span>: <span class="hljs-string">"object"</span>,
-			<span class="hljs-attr">"required"</span>: [
-				<span class="hljs-string">"@type"</span>
-			],
-			<span class="hljs-attr">"properties"</span>: {
-				<span class="hljs-attr">"@type"</span>:          { <span class="hljs-attr">"pattern"</span>: <span class="hljs-string">"provext:QualifiedSpecialization"</span> },
-				<span class="hljs-attr">"@id"</span>:            { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/QualifiedName"</span> },
-				<span class="hljs-attr">"generalEntity"</span>:  { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/QualifiedName"</span> },
-				<span class="hljs-attr">"specificEntity"</span>: { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/QualifiedName"</span> },
-				<span class="hljs-attr">"type"</span>:           { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/ArrayOfValues"</span>},
-				<span class="hljs-attr">"label"</span>:          { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/ArrayOfLabelValues"</span>}
-			},
-			<span class="hljs-attr">"patternProperties"</span>: {
-				<span class="hljs-attr">"^[A-Za-z0-9_]+:(.*)$"</span>: { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/ArrayOfValues"</span> }
-			},
-			<span class="hljs-attr">"additionalProperties"</span>: <span class="hljs-literal">false</span>
-		},
-		<span class="hljs-attr">"prov:QualifiedMembership"</span>: {
-			<span class="hljs-attr">"type"</span>: <span class="hljs-string">"object"</span>,
-			<span class="hljs-attr">"required"</span>: [
-				<span class="hljs-string">"@type"</span>
-			],
-			<span class="hljs-attr">"properties"</span>: {
-				<span class="hljs-attr">"@type"</span>:       { <span class="hljs-attr">"pattern"</span>: <span class="hljs-string">"provext:QualifiedMembership"</span> },
-				<span class="hljs-attr">"@id"</span>:         { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/QualifiedName"</span> },
-				<span class="hljs-attr">"collection"</span>:  { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/QualifiedName"</span> },
-				<span class="hljs-attr">"entity"</span>:      { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/QualifiedName+"</span> },
-				<span class="hljs-attr">"type"</span>:        { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/ArrayOfValues"</span>},
-				<span class="hljs-attr">"label"</span>:       { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/ArrayOfLabelValues"</span>}
-			},
-			<span class="hljs-attr">"patternProperties"</span>: {
-				<span class="hljs-attr">"^[A-Za-z0-9_]+:(.*)$"</span>: { <span class="hljs-attr">"$ref"</span>: <span class="hljs-string">"#/definitions/ArrayOfValues"</span> }
-			},
-			<span class="hljs-attr">"additionalProperties"</span>: <span class="hljs-literal">false</span>
-		},
 		<span class="hljs-attr">"prov:Influence"</span>: {
 			<span class="hljs-attr">"type"</span>: <span class="hljs-string">"object"</span>,
 			<span class="hljs-attr">"required"</span>: [
@@ -2510,7 +2466,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       
     </section>
 
-    <section id="context-appendix" class="appendix"><div class="header-wrapper"><h2 id="b-json-ld-context"><bdi class="secno">B. </bdi>JSON-LD Context</h2><a class="self-link" href="#context-appendix" aria-label="Permalink for Appendix B."></a></div>
+    <section id="context-appendix" class="appendix"><div class="header-wrapper"><h2 id="b-json-ld-context-for-prov-jsonld"><bdi class="secno">B. </bdi>JSON-LD Context for PROV-JSONLD</h2><a class="self-link" href="#context-appendix" aria-label="Permalink for Appendix B."></a></div>
       
       
       <pre aria-busy="false"><code class="hljs json">{
@@ -2812,7 +2768,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     </section>
 
 
-    <section id="provext-appendix" class="appendix"><div class="header-wrapper"><h2 id="c-provext-ontology"><bdi class="secno">C. </bdi>PROVEXT Ontology</h2><a class="self-link" href="#provext-appendix" aria-label="Permalink for Appendix C."></a></div>
+    <section id="provext-appendix" class="appendix"><div class="header-wrapper"><h2 id="c-provext-prov-ontology-extension-for-prov-jsonld"><bdi class="secno">C. </bdi>PROVEXT: PROV Ontology Extension for PROV-JSONLD</h2><a class="self-link" href="#provext-appendix" aria-label="Permalink for Appendix C."></a></div>
       
 
       <p>We provide here a minimal definition of the classes and properties introduced in provext in the context of PROV-JSONLD. They allow the qualification pattern to be applied to Membership, Specialization and Alternate.  For each, we define one class and two object properties. </p>
@@ -2892,7 +2848,10 @@ prov:hadMember
         :collection
     ) .</code></pre>
     </section>
-    
+    <section class="appendix" id="acknowledgements"><div class="header-wrapper"><h2 id="d-acknowledgements"><bdi class="secno">D. </bdi>Acknowledgements</h2><a class="self-link" href="#acknowledgements" aria-label="Permalink for Appendix D."></a></div>
+      
+      <p>Thank you to Pierre-Antoine Champin for his input on JSONLD and to Denis Ah-Kang for his assistance with the Respec tool.</p>
+    </section>
     
   
 
@@ -2927,11 +2886,28 @@ prov:hadMember
     }
 
     function selectElement5(element,utils, content, url ) {
-	var regex=new RegExp("\"" + element + "\"([\\s\\S]*?)" + "\"additionalProperties\": { \"type\": \"string\" }", 'g')
+	var regex=new RegExp("\"" + element + "\"([\\s\\S]*?)" + "lang_string\" }", 'g')
 
 	console.log("regexp " + regex);
 	var result = content.match(regex); 
-	return "{\n	" + result + "\n                                        } ]  } \n	}\n}";
+	return "{\n	" + result + "\n                                ]\n                         }\n	 }\n}";
+    }
+    function selectElement6(element,utils, content, url ) {
+	var regex=new RegExp("\"" + element + "\"([\\s\\S]*?)" + "lang_string\" }", 'g')
+
+	console.log("regexp " + regex);
+	var result = content.match(regex); 
+	return "{\n	" + result + "\n	}\n}";
+    }
+    function selectElement7(element,utils, content, url ) {
+	var regex=new RegExp("\"" + element + "\"([\\s\\S]*?)" + "\"additionalProperties\": { \"type\": \"string\" }", 'g')
+
+
+
+
+	console.log("regexp " + regex);
+	var result = content.match(regex); 
+	return "{\n	" + result + "\n                                        }\n                                ]\n	                }\n	}\n}";
     }
 
     function selectEntity(utils, content, url ) {
@@ -2995,6 +2971,12 @@ prov:hadMember
     function selectArrayOfValues(utils, content, url ) {
 	return selectElement5("ArrayOfValues",utils,content,url);
     }
+    function selectArrayOfLabelValues(utils, content, url ) {
+	return selectElement6("ArrayOfLabelValues",utils,content,url);
+    }
+    function selectContext(utils, content, url ) {
+	return selectElement7("Context",utils,content,url);
+    }
     function selectTypedValue(utils, content, url ) {
 	return selectElement("typed_value",utils,content,url);
     }
@@ -3025,9 +3007,9 @@ prov:hadMember
 	return  "{\n	" + result + "\n	}\n}";
     }
 
-    function selectContext(utils, content, url ) {
-	return selectElement4("Context",utils,content,url);
-    }
+//    function selectContext(utils, content, url ) {
+//	return selectElement4("Context",utils,content,url);
+//    }
 
 
     
@@ -3096,6 +3078,7 @@ prov:hadMember
     function selectContextElementIntro(element,utils, content, url ) {
 	var regex=new RegExp("\"" + element + "\"([\\s\\S]*?)" + "^\\s\"Activity", 'gm')
 
+
 	console.log("regexp " + regex);
 	var result = content.match(regex);
 	console.log(result);
@@ -3108,11 +3091,27 @@ prov:hadMember
     function selectContextIntro(utils, content, url ) {
 	return selectContextElementIntro("entity",utils,content,url);
     }
+    function selectContextElementIntro2(element,utils, content, url ) {
+	var regex=new RegExp("\"" + element + "\"([\\s\\S]*?)" + "^\\s\"entity", 'gm')
+
+
+	console.log("regexp " + regex);
+	var result = content.match(regex);
+	console.log(result);
+	var result2=result[0].replace("\"entity","");
+	result2=result2.trim();
+	result2=result2.substring(0, result2.length - 1);
+	console.log("luclu " + result2);
+	return "{\n	" + result2 + "\n}";
+    }
+    function selectContextIntro2(utils, content, url ) {
+	return selectContextElementIntro2("role",utils,content,url);
+    }
     
 
   </script>
 
-<section id="references" class="appendix"><div class="header-wrapper"><h2 id="d-references"><bdi class="secno">D. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix D."></a></div><section id="normative-references"><div class="header-wrapper"><h3 id="d-1-normative-references"><bdi class="secno">D.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix D.1"></a></div>
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="e-references"><bdi class="secno">E. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix E."></a></div><section id="normative-references"><div class="header-wrapper"><h3 id="e-1-normative-references"><bdi class="secno">E.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix E.1"></a></div>
     
     <dl class="bibliography"><dt id="bib-json-ld">[JSON-LD]</dt><dd>
       <a href="https://www.w3.org/TR/json-ld/"><cite>JSON-LD 1.0</cite></a>. Manu Sporny; Gregg Kellogg; Markus Lanthaler.  W3C. 3 November 2020. W3C Recommendation. URL: <a href="https://www.w3.org/TR/json-ld/">https://www.w3.org/TR/json-ld/</a>
@@ -3143,7 +3142,7 @@ prov:hadMember
     </dd><dt id="bib-xmlschema11-2">[XMLSCHEMA11-2]</dt><dd>
       <a href="https://www.w3.org/TR/xmlschema11-2/"><cite>W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes</cite></a>. David Peterson; Sandy Gao; Ashok Malhotra; Michael Sperberg-McQueen; Henry Thompson; Paul V. Biron et al.  W3C. 5 April 2012. W3C Recommendation. URL: <a href="https://www.w3.org/TR/xmlschema11-2/">https://www.w3.org/TR/xmlschema11-2/</a>
     </dd></dl>
-  </section><section id="informative-references"><div class="header-wrapper"><h3 id="d-2-informative-references"><bdi class="secno">D.2 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix D.2"></a></div>
+  </section><section id="informative-references"><div class="header-wrapper"><h3 id="e-2-informative-references"><bdi class="secno">E.2 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix E.2"></a></div>
     
     <dl class="bibliography"><dt id="bib-ipaw-poster">[IPAW-POSTER]</dt><dd>
       <a href="https://eprints.soton.ac.uk/395985/"><cite>PROV-JSONLD: A JSON and Linked Data Representation for PROV (POSTER)</cite></a>.  Springer Verlag. Poster at IPAW'16. URL: <a href="https://eprints.soton.ac.uk/395985/">https://eprints.soton.ac.uk/395985/</a>
@@ -3370,6 +3369,34 @@ prov:hadMember
       <ul>
     <li>
       <a href="#ref-for-dfn-bundle-schema-1" title="§ 4.19 prov:Bundle and prov:Document">§ 4.19 prov:Bundle and prov:Document</a> 
+    </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-context-schema" aria-label="Links in this document to definition: Schemas for prov:Statement and prov:StatementOrBundle">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-context-schema" aria-label="Permalink for definition: Schemas for prov:Statement and prov:StatementOrBundle. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+      <a href="#ref-for-dfn-context-schema-1" title="§ 4.19 prov:Bundle and prov:Document">§ 4.19 prov:Bundle and prov:Document</a> 
+    </li><li>
+      <a href="#ref-for-dfn-context-schema-2" title="§ 4.20 Context">§ 4.20 Context</a> 
+    </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-context-schema" aria-label="Links in this document to definition: Schema for Context">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-context-schema" aria-label="Permalink for definition: Schema for Context. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+      <a href="#ref-for-dfn-context-schema-1" title="§ 4.19 prov:Bundle and prov:Document">§ 4.19 prov:Bundle and prov:Document</a> 
+    </li><li>
+      <a href="#ref-for-dfn-context-schema-2" title="§ 4.20 Context">§ 4.20 Context</a> 
     </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-entity-context" aria-label="Links in this document to definition: Context for Entity">
