@@ -525,19 +525,30 @@ table.thinborder td {
 	  <pre class="json" data-include="schema-2024-08-25.json" data-oninclude="selectDocument"></pre>
 	</div>
 
-	<p>Bundles contain statements (definition <span class="hljs-attr">prov:Statement</span>), whereas documents contain statements or bundles (definition <span class="hljs-attr">prov:StatementOrBundle</span>).
+	<p>Bundles contain statements (definition <span class="hljs-attr">prov:Statement</span>), whereas documents contain statements or bundles (definition <span class="hljs-attr">prov:StatementOrBundle</span>); see their specification in <a>Schemas for prov:Statement and prov:StatementOrBundle</a>.</p>
 	
 
+	<dfn data-dfn-type="dfn" id="dfn-context-schema">Schemas for prov:Statement and prov:StatementOrBundle</dfn>	  
       	<div  class="frame">
 	  <pre class="json" data-include="schema-2024-08-25.json" data-oninclude="selectStatement"></pre>
 	  <pre class="json" data-include="schema-2024-08-25.json" data-oninclude="selectStatementOrBundle"></pre>
 	</div>
+	</dfn>
+	<p>The type <span class="hljs-string">Context</span> is described in the next section.
+      </section>
+
+      <section id="type-context">
+	<h3>Context</h3>
 
 
-	<p>Finally, contexts are defined as follows. They take the shape of an array, containing either mappings of prefixes to IRIs or IRIs to further JSON-LD contexts.</p>
+
+	<p>Finally, contexts are defined according to <a>Schema for Context</a>. They take the shape of an array, containing either mappings of prefixes to IRIs or IRIs to further JSON-LD contexts.</p>
+	<dfn data-dfn-type="dfn" id="dfn-context-schema">Schema for Context</dfn>
       	<div  class="frame">
 	  <pre class="json" data-include="schema-2024-08-25.json" data-oninclude="selectContext"></pre>
 	</div>
+	</dfn>
+	
 </section>
 
 
@@ -578,9 +589,14 @@ table.thinborder td {
 	  respectively map to PROV-O object properties
 	  <span class="hljs-string">prov:entity</span>,
 	  <span class="hljs-string">prov:activity</span> and
-	  <span class="hljs-string">prov:agent</span>.</p>
+	  <span class="hljs-string">prov:agent</span>.
+	</p>
 
-	  <p>The following JSON properties have the same meaning in all contexts of a PROV-JSONLD document:
+	<div  class="frame">
+	  <pre class="json" data-include="context-2024-08-25.jsonld" data-oninclude="selectContextIntro"></pre>
+	</div>
+
+	<p>The following JSON properties have the same meaning in all contexts of a PROV-JSONLD document:
 	  <span class="hljs-attr">role</span>,
 	  <span class="hljs-attr">type</span>,
 	  <span class="hljs-attr">label</span> and
@@ -593,7 +609,7 @@ table.thinborder td {
 	</p>
 
 	<div  class="frame">
-	  <pre class="json" data-include="context-2024-08-25.jsonld" data-oninclude="selectContextIntro"></pre>
+	  <pre class="json" data-include="context-2024-08-25.jsonld" data-oninclude="selectContextIntro2"></pre>
 	</div>
       </section>
 
@@ -904,7 +920,7 @@ table.thinborder td {
       <dd>The PROV-JSONLD specification does not introduce constructs for some PROV subtypes and subrelations, such as <span class="hljs-string">prov:Person</span>, <span class="hljs-string">prov:Organization</span>, <span class="hljs-string">prov:SoftwareAgent</span>, <span class="hljs-string">prov:Collection</span>, or <span class="hljs-string">prov:Quotation</span>, <span class="hljs-string">prov:PrimarySource</span>, <span class="hljs-string">prov:Revision</span>. Instead, the example of <a href="#Example">Section 3</a> illustrates how they can be accommodated within the existing structures. We copy below an agent expression of type <span class="hljs-string">prov:Person</span> and a derivation of type <span class="hljs-string">prov:Revision</span>.  These subtypes and subrelations are specified inside the <span class="hljs-attr">prov:type</span> property.  PROV-XML offers a similar way of encoding such subtypes and subrelations,  alongside specialized structures.  We opted for this single approach to ensure simplicity and efficiency of parsers.
 
 	<div   class="example">
-	  <pre class="json" data-include="subtypes-2024-06-19.jsonld"></pre>
+	  <pre class="json" data-include="subtypes-2024-06-19.jsonld" data-include-format="text"></pre>
 	</div>
 	</dd>
       
@@ -933,7 +949,7 @@ table.thinborder td {
     </section>
 
     <section id='context-appendix' class="appendix">
-      <h2>JSON-LD Context</h2>
+      <h2>JSON-LD Context for PROV-JSONLD</h2>
       
       <pre data-include="context-2024-08-25.jsonld">
       </pre>
@@ -941,7 +957,7 @@ table.thinborder td {
 
 
     <section id='provext-appendix' class="appendix">
-      <h2>PROVEXT Ontology</h2>
+      <h2>PROVEXT: PROV Ontology Extension for PROV-JSONLD</h2>
 
       <p>We provide here a minimal definition of the classes and properties introduced in provext in the context of PROV-JSONLD. They allow the qualification pattern to be applied to Membership, Specialization and Alternate.  For each, we define one class and two object properties. </p>
       
@@ -1178,6 +1194,7 @@ table.thinborder td {
     function selectContextElementIntro(element,utils, content, url ) {
 	var regex=new RegExp("\"" + element + "\"([\\s\\S]*?)" + "^\\s\"Activity", 'gm')
 
+
 	console.log("regexp " + regex);
 	var result = content.match(regex);
 	console.log(result);
@@ -1189,6 +1206,22 @@ table.thinborder td {
     }
     function selectContextIntro(utils, content, url ) {
 	return selectContextElementIntro("entity",utils,content,url);
+    }
+    function selectContextElementIntro2(element,utils, content, url ) {
+	var regex=new RegExp("\"" + element + "\"([\\s\\S]*?)" + "^\\s\"entity", 'gm')
+
+
+	console.log("regexp " + regex);
+	var result = content.match(regex);
+	console.log(result);
+	var result2=result[0].replace("\"entity","");
+	result2=result2.trim();
+	result2=result2.substring(0, result2.length - 1);
+	console.log("luclu " + result2);
+	return "{\n	" + result2 + "\n}";
+    }
+    function selectContextIntro2(utils, content, url ) {
+	return selectContextElementIntro2("role",utils,content,url);
     }
     
 
