@@ -1,13 +1,13 @@
-@prefix : <https://openprovenance.org/provjsonld/ns/provext#> .
+@prefix : <https://openprovenance.org/ns/provext#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://openprovenance.org/provjsonld/ns/provext#> .
+@base <https://openprovenance.org/ns/provext#> .
 
-<https://openprovenance.org/provjsonld/ns/provext#> rdf:type owl:Ontology .
+<https://openprovenance.org/ns/provext#> rdf:type owl:Ontology .
 
 #################################################################
 #    Object Properties
