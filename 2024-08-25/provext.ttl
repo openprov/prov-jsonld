@@ -32,7 +32,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty ,
                     rdfs:range :Alternate .
 
 
-:collection rdf:type owl:ObjectProperty ;
+:member rdf:type owl:ObjectProperty ;
                     rdfs:domain :Membership ;
                     rdfs:range :Entity .
 
@@ -70,7 +70,7 @@ prov:alternateOf
 
 prov:hadMember
     owl:propertyChainAxiom (:qualifiedMembership
-        :collection
+        :member
     ) .
 
 
