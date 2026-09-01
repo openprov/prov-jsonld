@@ -130,7 +130,7 @@
 			]
 		},
 		"prov:Statement": {
-			"anyOf": [
+			"oneOf": [
 				{ "$ref": "#/definitions/prov:Entity" },
 				{ "$ref": "#/definitions/prov:Activity" },
 				{ "$ref": "#/definitions/prov:Agent" },
@@ -154,7 +154,12 @@
 			"type": "object",
 			"required": [ "@type", "@id" ],
 			"properties": {
-				"@type":      { "pattern": "Entity" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Entity" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Entity" } }
+					]
+				},
 				"@id":        { "$ref": "#/definitions/QualifiedName" },
 				"type":       { "$ref": "#/definitions/ArrayOfValues"},
 				"value":      { "$ref": "#/definitions/ArrayOfValues"},
@@ -170,7 +175,12 @@
 			"type": "object",
 			"required": [ "@type", "@id" ],
 			"properties": {
-				"@type":      { "pattern": "Agent" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Agent" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Agent" } }
+					]
+				},
 				"@id":        { "$ref": "#/definitions/QualifiedName" },
 				"type":       { "$ref": "#/definitions/ArrayOfValues"},
 				"location":   { "$ref": "#/definitions/ArrayOfValues" },
@@ -185,7 +195,12 @@
 			"type": "object",
 			"required": [ "@type", "@id" ],
 			"properties": {
-				"@type":      { "pattern": "Activity" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Activity" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Activity" } }
+					]
+				},
 				"@id":        { "$ref": "#/definitions/QualifiedName" },
 				"startTime":  { "$ref": "#/definitions/DateTime" },
 				"endTime":    { "$ref": "#/definitions/DateTime" },
@@ -202,7 +217,12 @@
 			"type": "object",
 			"required": [ "@type" ],
 			"properties": {
-				"@type":      { "pattern": "Usage" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Usage" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Usage" } }
+					]
+				},
 				"@id":        { "$ref": "#/definitions/QualifiedName" },
 				"entity":     { "$ref": "#/definitions/QualifiedName"},
 				"activity":   { "$ref": "#/definitions/QualifiedName" },
@@ -221,7 +241,12 @@
 			"type": "object",
 			"required": [ "@type" ],
 			"properties": {
-				"@type":      { "pattern": "Generation" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Generation" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Generation" } }
+					]
+				},
 				"@id":        { "$ref": "#/definitions/QualifiedName" },
 				"entity":     { "$ref": "#/definitions/QualifiedName"},
 				"activity":   { "$ref": "#/definitions/QualifiedName" },
@@ -240,7 +265,12 @@
 			"type": "object",
 			"required": [ "@type" ],
 			"properties": {
-				"@type":      { "pattern": "Invalidation" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Invalidation" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Invalidation" } }
+					]
+				},
 				"@id":        { "$ref": "#/definitions/QualifiedName" },
 				"entity":     { "$ref": "#/definitions/QualifiedName"},
 				"activity":   { "$ref": "#/definitions/QualifiedName" },
@@ -261,7 +291,12 @@
 				"@type"
 			],
 			"properties": {
-				"@type":      { "pattern": "Start" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Start" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Start" } }
+					]
+				},
 				"@id":        { "$ref": "#/definitions/QualifiedName" },
 				"activity":   { "$ref": "#/definitions/QualifiedName" },
 				"starter":    { "$ref": "#/definitions/QualifiedName"},
@@ -283,7 +318,12 @@
 				"@type"
 			],
 			"properties": {
-				"@type":      { "pattern": "End" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "End" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "End" } }
+					]
+				},
 				"@id":        { "$ref": "#/definitions/QualifiedName" },
 				"activity":   { "$ref": "#/definitions/QualifiedName" },
 				"ender" :     { "$ref": "#/definitions/QualifiedName"},
@@ -305,7 +345,12 @@
 				"@type"
 			],
 			"properties": {
-				"@type":      { "pattern": "Attribution" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Attribution" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Attribution" } }
+					]
+				},
 				"@id":        { "$ref": "#/definitions/QualifiedName" },
 				"entity":     { "$ref": "#/definitions/QualifiedName" },
 				"agent" :     { "$ref": "#/definitions/QualifiedName"},
@@ -323,7 +368,12 @@
 				"@type"
 			],
 			"properties": {
-				"@type":      { "pattern": "Association" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Association" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Association" } }
+					]
+				},
 				"@id":        { "$ref": "#/definitions/QualifiedName" },
 				"activity":   { "$ref": "#/definitions/QualifiedName" },
 				"agent" :     { "$ref": "#/definitions/QualifiedName"},
@@ -343,7 +393,12 @@
 				"@type"
 			],
 			"properties": {
-				"@type":      { "pattern": "Delegation" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Delegation" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Delegation" } }
+					]
+				},
 				"@id":        { "$ref": "#/definitions/QualifiedName" },
 				"delegate":   { "$ref": "#/definitions/QualifiedName" },
 				"responsible":{ "$ref": "#/definitions/QualifiedName" },
@@ -362,7 +417,12 @@
 				"@type"
 			],
 			"properties": {
-				"@type":           { "pattern": "Derivation" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Derivation" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Derivation" } }
+					]
+				},
 				"@id":             { "$ref": "#/definitions/QualifiedName" },
 				"activity":        { "$ref": "#/definitions/QualifiedName" },
 				"generation":      { "$ref": "#/definitions/QualifiedName" },
@@ -383,7 +443,12 @@
 				"@type"
 			],
 			"properties": {
-				"@type":      { "pattern": "Alternate" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Alternate" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Alternate" } }
+					]
+				},
 				"@id":        { "$ref": "#/definitions/QualifiedName" },
 				"alternate1": { "$ref": "#/definitions/QualifiedName" },
 				"alternate2": { "$ref": "#/definitions/QualifiedName" },
@@ -401,7 +466,12 @@
 				"@type"
 			],
 			"properties": {
-				"@type":           { "pattern": "Specialization" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Specialization" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Specialization" } }
+					]
+				},
 				"@id":             { "$ref": "#/definitions/QualifiedName" },
 				"generalEntity":   { "$ref": "#/definitions/QualifiedName" },
 				"specificEntity":  { "$ref": "#/definitions/QualifiedName" },
@@ -419,7 +489,12 @@
 				"@type"
 			],
 			"properties": {
-				"@type":       { "pattern": "Membership" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Membership" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Membership" } }
+					]
+				},
 				"@id":         { "$ref": "#/definitions/QualifiedName" },
 				"entity":      { "$ref": "#/definitions/QualifiedName+" },
 				"collection":  { "$ref": "#/definitions/QualifiedName" },
@@ -437,7 +512,12 @@
 				"@type"
 			],
 			"properties": {
-				"@type":       { "pattern": "Influence" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Influence" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Influence" } }
+					]
+				},
 				"@id":         { "$ref": "#/definitions/QualifiedName" },
 				"influencer":  { "$ref": "#/definitions/QualifiedName" },
 				"influencee":  { "$ref": "#/definitions/QualifiedName" },
@@ -455,7 +535,12 @@
 				"@type"
 			],
 			"properties": {
-				"@type":      { "pattern": "Communication" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Communication" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Communication" } }
+					]
+				},
 				"@id":        { "$ref": "#/definitions/QualifiedName" },
 				"informant":  { "$ref": "#/definitions/QualifiedName" },
 				"informed":   { "$ref": "#/definitions/QualifiedName" },
@@ -473,7 +558,12 @@
 				"@type", "@id", "@graph", "@context"
 			],
 			"properties": {
-				"@type":      { "pattern": "Bundle" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Bundle" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Bundle" } }
+					]
+				},
 				"@id":        { "$ref": "#/definitions/QualifiedName" },
 				"@context":   { "$ref": "#/definitions/Context" },
 				"@graph":     {
@@ -489,7 +579,12 @@
 				"@context", "@graph"
 			],
 			"properties": {
-				"@type":       { "pattern": "Document" },
+				"@type": {
+					"oneOf": [
+						{ "type": "string", "pattern": "Document" },
+						{ "type": "array", "contains": { "type": "string", "pattern": "Document" } }
+					]
+				},
 				"@context":    { "$ref": "#/definitions/Context" },
 				"@graph":      {
 					"type": "array",
