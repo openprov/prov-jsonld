@@ -48,6 +48,9 @@ owl:topObjectProperty rdf:type owl:ObjectProperty ,
 #    Classes
 #################################################################
 
+:Document rdf:type owl:Class ;
+          rdfs:comment "A PROV-JSONLD document: the housekeeping construct that holds a set of PROV statements and bundles. It has no counterpart in PROV-DM or PROV-O."@en .
+
 :Membership rdf:type owl:Class .
 
 :Alternate rdf:type owl:Class .
