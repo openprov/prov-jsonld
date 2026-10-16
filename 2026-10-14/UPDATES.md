@@ -24,4 +24,14 @@
   not enforce. Consequence: `ArrayOfValues` and `ArrayOfStringValues` accept
   the same values and differ in how a plain string is read.
 
+- `schema-qn.json` (root link `schema-2026-10-14-qn.json`): a variant of
+  `schema.json` that enforces the syntax of a qualified name, PROV-N's
+  `QUALIFIED_NAME` restricted to ASCII (letters `A-Z`, `a-z` only; PROV-N's
+  other characters, `%` escapes and `\` escapes kept). Plain strings under
+  `type`, `location` and `role` are checked as qualified names; those under
+  other attributes (`ArrayOfStringValues`) stay free text. Generated from
+  `schema.json` by `script/schema-qn.py` (`make qn VERSION=...`), and differs
+  from it only in `QualifiedName`'s pattern and `$comment` and in the `$id`
+  (`make qn.check` verifies it).
+
 - `context.jsonld`, `provext.ttl`: unchanged from 2026-09-12.
